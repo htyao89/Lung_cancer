@@ -12,6 +12,10 @@ addpath('./liblinear-2.20/matlab/');
 fprintf('train process ... ... \n');
 option=['-c 5 -q'];
 
+if ~exist('./code_data')
+     mkdir('./code_data/')
+end
+
 if ~exist('./code_data/weights.mat')
     all_weights=[];
     all_acc=[];
@@ -74,7 +78,7 @@ end
 feature_index=feature_index(sorted_idx);
 acc=[];
 acc_val=[];
-parpool('local',6) 
+parpool('local',6)
 for r=1:500
     train_data=[];
     train_label=[];
