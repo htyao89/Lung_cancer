@@ -3,7 +3,6 @@ clear;
 
 data = csvread('./LC 365-POS.csv');
 label = data(1,2:312);
-label1 = data(2,2:312);
 feature_index = data(3:end,1);
 data = data(3:end,2:312);
 data = data';
